@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+   Plant Page
+{% endblock %}
+ 
+{% block body %}
+   <h1>All the Plants</h1>
+   {% for plant in plants %}
+       <h3>Species: {{plant.name}}</h3>
+   {% endfor %}
+{% endblock %}
