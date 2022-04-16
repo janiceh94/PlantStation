@@ -13,7 +13,9 @@ class Plant_List(TemplateView):
     name = self.request.GET.get('name')
     if name != None:
         context['plants'] = Plant.objects.filter(name__icontains=name)
+        context['header'] = f'Searching for {name}'
     else:
         context['plants'] = Plant.objects.all()
+        context['header'] = 'All Plants: '
     return context
 
