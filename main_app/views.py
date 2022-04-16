@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant
+from django.http import Http404
+from django.views.generic.edit import CreateView
  
 class Landing(TemplateView):
    template_name = 'landing.html'
@@ -19,3 +21,9 @@ class Plant_List(TemplateView):
         context['header'] = 'All Plants: '
     return context
 
+# plant CRUD
+class Plant_Create(CreateView):
+    model = Plant
+    fields = ['name', 'img', 'water', 'light', 'temperature']
+    template_name = 'plant_create.html'
+    success_url = '/plants/'
