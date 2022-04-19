@@ -4,6 +4,8 @@ from .models import Plant
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
  
 class Landing(TemplateView):
    template_name = 'landing.html'
@@ -28,8 +30,11 @@ class Plant_Create(CreateView):
     fields = ['name', 'img', 'water', 'light', 'temperature']
     template_name = 'plant_create.html'
 
-    def get_success_url(self):
-        return reverse('plant_detail', kwargs={'pk': self.object.pk})
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/plants/')
 
 class Plant_Detail(DetailView):
     model = Plant
@@ -47,3 +52,9 @@ class Plant_Delete(DeleteView):
     model = Plant
     template_name = 'plant_delete.html'
     success_url='/plants/'
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    plants = Plant.objects.filter(user=user)
+    return render(request, 'profile.html', {'username':username, 'plants': plants})
+    
