@@ -9,6 +9,7 @@ urlpatterns = [
     # plant CRUD
     path('plants/new/', views.Plant_Create.as_view(), name='plant_create'),
     path('plants/<int:pk>/', views.Plant_Detail.as_view(), name='plant_detail'),
+    path('plants/<int:pk>/update', views.Plant_Update.as_view(), name='plant_update'),
 ]
 
 

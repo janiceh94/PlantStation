@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
  
 class Landing(TemplateView):
@@ -31,3 +31,9 @@ class Plant_Create(CreateView):
 class Plant_Detail(DetailView):
     model = Plant
     template_name = 'plant_detail.html'
+
+class Plant_Update(UpdateView):
+    model = Plant
+    fields = ['name', 'img', 'water', 'light', 'temperature']
+    template_name = 'plant_update.html'
+    success_url = '/plants/'
