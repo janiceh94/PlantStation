@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>{{username}}'s collection:</h1>
+
+{% for plant in plants %}
+<a href = "/plants/{{plant.id}}/">
+    <h3>{{plant.name}}</h3>
+</a>
+
+{% endfor %}
+{% endblock %}
