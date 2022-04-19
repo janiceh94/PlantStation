@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Are you sure you want to DELETE {{plant.name}}?</h1>
+<form method = 'post'>
+    {% csrf_token %}
+    <div>
+        <input type = 'submit' value = 'Confirm'/>
+        <a href = "{% url 'plant_detail' plant.pk %}">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

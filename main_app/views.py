@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
  
@@ -42,3 +42,8 @@ class Plant_Update(UpdateView):
     
     def get_success_url(self):
         return reverse('plant_detail', kwargs={'pk': self.object.pk})
+
+class Plant_Delete(DeleteView):
+    model = Plant
+    template_name = 'plant_delete.html'
+    success_url='/plants/'
