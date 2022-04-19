@@ -10,4 +10,7 @@
 <h3>Light: {{ plant.light }}</h3>
 <h3>Temperature: {{ plant.temperature }}</h3>
 
+<div>
+    <a href = "{% url 'plant_update' plant.pk %}">Update</a>
+</div>
 {% endblock %}

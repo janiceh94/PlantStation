@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
  
 class Landing(TemplateView):
    template_name = 'landing.html'
@@ -26,8 +27,18 @@ class Plant_Create(CreateView):
     model = Plant
     fields = ['name', 'img', 'water', 'light', 'temperature']
     template_name = 'plant_create.html'
-    success_url = '/plants/'
+
+    def get_success_url(self):
+        return reverse('plant_detail', kwargs={'pk': self.object.pk})
 
 class Plant_Detail(DetailView):
     model = Plant
     template_name = 'plant_detail.html'
+
+class Plant_Update(UpdateView):
+    model = Plant
+    fields = ['name', 'img', 'water', 'light', 'temperature']
+    template_name = 'plant_update.html'
+    
+    def get_success_url(self):
+        return reverse('plant_detail', kwargs={'pk': self.object.pk})
