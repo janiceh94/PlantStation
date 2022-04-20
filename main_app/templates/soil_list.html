@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Soils</h1>
+{% for soil in soils %}
+<div>
+    <a href = "{% url 'soil_detail' soil.id %}">
+        <h3>{{soil.name}}</h3>
+    </a>
+</div>
+
+{% endfor %}
+{% endblock %}
