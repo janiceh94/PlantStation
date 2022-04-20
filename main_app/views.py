@@ -28,7 +28,7 @@ class Plant_List(TemplateView):
 # plant CRUD
 class Plant_Create(CreateView):
     model = Plant
-    fields = ['name', 'img', 'water', 'light', 'temperature']
+    fields = '__all__'
     template_name = 'plant_create.html'
 
     def form_valid(self, form):
@@ -43,7 +43,7 @@ class Plant_Detail(DetailView):
 
 class Plant_Update(UpdateView):
     model = Plant
-    fields = ['name', 'img', 'water', 'light', 'temperature']
+    fields = '__all__'
     template_name = 'plant_update.html'
     
     def get_success_url(self):

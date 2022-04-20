@@ -9,6 +9,14 @@
 <h3>Water: {{ plant.water }}</h3>
 <h3>Light: {{ plant.light }}</h3>
 <h3>Temperature: {{ plant.temperature }}</h3>
+<h3>Soil:</h3>
+<ul>
+    {% for soil in plant.soils.all %}
+        <li>{{soil.name}}</li>
+    {% empty %}
+        <div>No Soil</div>
+    {% endfor %}
+</ul>
 
 <div>
     <a href = "{% url 'plant_update' plant.pk %}">Update</a>

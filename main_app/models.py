@@ -16,6 +16,7 @@ class Plant(models.Model):
     temperature = models.CharField(max_length=250)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    soils = models.ManyToManyField(Soil)
 
     def __str__(self):
         return self.name
