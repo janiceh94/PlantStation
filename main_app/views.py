@@ -1,3 +1,4 @@
+from turtle import mode
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant, Soil
@@ -67,3 +68,20 @@ def Soil_List(request):
 def Soil_Detail(request, soil_id):
     soil = Soil.objects.get(id=soil_id)
     return render(request, 'soil_detail.html', {'soil':soil})
+
+class Soil_Create(CreateView):
+    model = Soil
+    fields = '__all__'
+    template_name = "soil_create.html"
+    success_url = '/soils/'
+
+class Soil_Update(UpdateView):
+    model = Soil
+    fields = '__all__'
+    template_name = "soil_update.html"
+    success_url = '/soils/'
+
+class Soil_Delete(DeleteView):
+    model = Soil
+    template_name = 'soil_delete.html'
+    success_url = '/soils/'

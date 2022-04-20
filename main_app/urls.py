@@ -16,10 +16,10 @@ urlpatterns = [
     #soil 
     path('soil/', views.Soil_List, name='soil_list'),
     # soil CRUD
-    # path('soil/new/', views.Soil_Create.as_view(), name='soil_create'),
-    path('soil/<int:pk>/', views.Soil_Detail, name='soil_detail'),
-    # path('soil/<int:pk>/update', views.Soil_Update.as_view(), name='soil_update'),
-    # path('soil/<int:pk>/delete', views.Soil_Delete.as_view(), name='soil_delete'),
+    path('soil/new/', views.Soil_Create.as_view(), name='soil_create'),
+    path('soil/<int:soil_id>/', views.Soil_Detail, name='soil_detail'),
+    path('soil/<int:pk>/update', views.Soil_Update.as_view(), name='soil_update'),
+    path('soil/<int:pk>/delete', views.Soil_Delete.as_view(), name='soil_delete'),
 ]
 
 
