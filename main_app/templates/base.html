@@ -15,6 +15,13 @@
 </head>
 <body>
     <nav>
+        {% if user.is_authenicated %}
+            <a href = '/user/{{user.name}}'>Hello, {{user.username}}!</a>
+            <a href = '/accounts/logout'>LogOut</a>
+        {% else %}
+            <a href = '{% url "login" %}'>Login</a>
+            <a href = "{% url 'signup' %}">Sign Up</a>
+        {% endif %}
         <a href = '/plants/'>Plants</a>
         <a href = '/plants/new/'>Add Plants</a>
         <a href = '/soil/'>Soils</a>
