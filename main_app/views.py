@@ -1,4 +1,3 @@
-from turtle import mode
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import Plant, Soil
@@ -7,6 +6,10 @@ from django.views.generic import DetailView
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
  
 class Landing(TemplateView):
    template_name = 'landing.html'
@@ -26,7 +29,7 @@ class Plant_List(TemplateView):
     return context
 
 # plant CRUD
-class Plant_Create(CreateView):
+class Plant_Create(LoginRequiredMixin, CreateView):
     model = Plant
     fields = '__all__'
     template_name = 'plant_create.html'
@@ -41,7 +44,7 @@ class Plant_Detail(DetailView):
     model = Plant
     template_name = 'plant_detail.html'
 
-class Plant_Update(UpdateView):
+class Plant_Update(LoginRequiredMixin, UpdateView):
     model = Plant
     fields = '__all__'
     template_name = 'plant_update.html'
@@ -49,12 +52,13 @@ class Plant_Update(UpdateView):
     def get_success_url(self):
         return reverse('plant_detail', kwargs={'pk': self.object.pk})
 
-class Plant_Delete(DeleteView):
+class Plant_Delete(LoginRequiredMixin, DeleteView):
     model = Plant
     template_name = 'plant_delete.html'
     success_url='/plants/'
 
 # User profile
+@login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     plants = Plant.objects.filter(user=user)
@@ -69,19 +73,34 @@ def Soil_Detail(request, soil_id):
     soil = Soil.objects.get(id=soil_id)
     return render(request, 'soil_detail.html', {'soil':soil})
 
-class Soil_Create(CreateView):
+class Soil_Create(LoginRequiredMixin, CreateView):
     model = Soil
     fields = '__all__'
     template_name = "soil_create.html"
     success_url = '/soils/'
 
-class Soil_Update(UpdateView):
+class Soil_Update(LoginRequiredMixin, UpdateView):
     model = Soil
     fields = '__all__'
     template_name = "soil_update.html"
     success_url = '/soils/'
 
-class Soil_Delete(DeleteView):
+class Soil_Delete(LoginRequiredMixin, DeleteView):
     model = Soil
     template_name = 'soil_delete.html'
     success_url = '/soils/'
+
+# auth
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if(form.is_valid()):
+            user = form.save()
+            login(request, user)
+            print('Hello', user.username)
+            return HttpResponseRedirect('/user/' + str(user.username)+'/')
+        else:
+            return render(request, 'signup.html', {'form': form})
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form': form})

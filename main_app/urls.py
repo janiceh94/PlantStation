@@ -20,6 +20,8 @@ urlpatterns = [
     path('soil/<int:soil_id>/', views.Soil_Detail, name='soil_detail'),
     path('soil/<int:pk>/update', views.Soil_Update.as_view(), name='soil_update'),
     path('soil/<int:pk>/delete', views.Soil_Delete.as_view(), name='soil_delete'),
+    # auth
+    path('accounts/signup/', views.signup_view, name="signup"),
 ]
 
 
