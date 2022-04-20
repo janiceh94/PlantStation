@@ -26,4 +26,4 @@ As a user I want my own account </br>
 ![Screen Shot 2022-04-15 at 10 59 44 PM](https://user-images.githubusercontent.com/93102224/163663755-a08a076f-97c4-4345-8b49-35089b461c0b.png)
 ![Screen Shot 2022-04-15 at 10 57 15 PM](https://user-images.githubusercontent.com/93102224/163663684-f05b3bf8-eefc-4536-b63e-b0bd36f6ea34.png)
 ![Screen Shot 2022-04-15 at 10 40 19 PM](https://user-images.githubusercontent.com/93102224/163663225-358b98ac-ae4d-4ea7-8368-5e94a79cff45.png)
-![Screen Shot 2022-04-15 at 10 40 25 PM](https://user-images.githubusercontent.com/93102224/163663233-2699ec5a-236e-4c9a-b217-f9a5511426de.
+![Screen Shot 2022-04-15 at 10 40 25 PM](https://user-images.githubusercontent.com/93102224/163663233-2699ec5a-236e-4c9a-b217-f9a5511426de.png)
