@@ -3,13 +3,16 @@
    Plant Page
 {% endblock %}
  
+{% block header %}
+<form>
+    <div>
+        <input type ='text' name='name' placeholder='Plant Name'/>
+        <input type = 'submit' value='Search'/>
+    </div>
+</form>
+{% endblock %}
+
 {% block body %}
-    <form>
-        <div>
-            <input type ='text' name='name' placeholder='Plant Name'/>
-            <input type = 'submit' value='Search'/>
-        </div>
-    </form>
    <h1>{{header}}</h1>
    {% for plant in plants %}
         <img src={{plant.img.url}}/>
