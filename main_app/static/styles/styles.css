@@ -5,8 +5,22 @@
     padding:5px;
     border-radius: 5px;
 }
+
+.plantLink{
+    text-decoration: none;
+    color: black;
+}
+.plantLink:hover{
+    color: rgb(183, 212, 165);
+}
+
 body{
     background-color:rgb(250, 255, 248);
     text-align: center;
 }
-
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}

@@ -25,7 +25,7 @@ class Plant_List(TemplateView):
         context['header'] = f'Searching for {name}'
     else:
         context['plants'] = Plant.objects.all()
-        context['header'] = 'All Plants: '
+        context['header'] = 'All Plants'
     return context
 
 # plant CRUD
