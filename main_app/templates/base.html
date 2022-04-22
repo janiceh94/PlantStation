@@ -21,12 +21,14 @@
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'signup' %}">SignUp</a>
         {% endif %}
-        <a href = '/plants/'>Plants</a>
-        <a href = '/soil/'>Soils</a>
-        <a href = '/user/{{user.username}}/'>Profile</a>
-        <a href = '/admin/'>Admin</a>
     </nav>
    {% block body %}
    {% endblock %}
 </body>
+<footer>
+    <a href = '/plants/'>Plants</a>
+    <a href = '/soil/'>Soils</a>
+    <a href = '/user/{{user.username}}/'>Profile</a>
+    <a href = '/admin/'>Admin</a>
+</footer>
 </html>

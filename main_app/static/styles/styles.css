@@ -24,3 +24,11 @@ img{
     margin-right: auto;
     width: 30%;
 }
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(183, 212, 165);
+}
