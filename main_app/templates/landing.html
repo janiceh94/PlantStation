@@ -1,8 +1,21 @@
-{% extends 'base.html' %}
-{% block title %}
-   Landing Page
-{% endblock %}
- 
-{% block body %}
-   <h1>Landing Page</h1>
-{% endblock %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+    <script src="{% static 'scripts/app.js' %}" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PlantStation</h1>
+    <p>Image Here</p>
+    <h4>Join PlantStation</h4>
+    <a class= 'landingLink' href="{% url 'signup' %}">Sign Up</a>
+    <h4>Already have an account?</h4>
+    <a class = 'landingLink' href="{% url 'login' %}">Login</a>
+</body>
+</html>

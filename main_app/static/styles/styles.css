@@ -1,3 +1,12 @@
-h1{
-    color: blue
+.landingLink{
+    text-decoration: none;
+    color: black;
+    background-color:rgb(183, 212, 165);
+    padding:5px;
+    border-radius: 5px;
 }
+body{
+    background-color:rgb(250, 255, 248);
+    text-align: center;
+}
+
