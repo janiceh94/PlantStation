@@ -10,7 +10,17 @@
 {% for plant in plants %}
 <a href = "/plants/{{plant.id}}/">
     <h3>{{plant.name}}</h3>
+    {% if username == user.username %}
+    <a href = "{% url 'plant_update' plant.pk %}">Edit</a>
+    <a href = "{% url 'plant_delete' plant.pk %}">Delete</a>
+    {% endif %}
 </a>
-
 {% endfor %}
+{% for soil in soils %}
+<a href = "/soil/{{soil.id}}/">
+<h3>{{soil.name}}</h3>
+</a>
+{% endfor %}
+
+
 {% endblock %}

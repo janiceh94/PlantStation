@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 class Soil(models.Model):
     name = models.CharField(max_length=250)
     img = models.ImageField(upload_to='images')
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     def __str__(self):
         return self.name
 

@@ -17,5 +17,11 @@
    {% for soil in soils %}
         <img src={{soil.img.url}}/>
         <a class = 'detailLink' href ="{% url 'soil_detail' soil.pk %}">Name: {{ soil.name }}</a>
+        <p>Planted By:
+            <a href = '/user/{{soil.user.username}}/'>
+                {{soil.user.username }}
+            </a>
+        </p>
    {% endfor %}
+    
 {% endblock %}

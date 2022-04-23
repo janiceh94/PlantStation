@@ -11,11 +11,7 @@
     {% empty %}
         <p>No Plant found</p>
     {% endfor %}
+    <a href = "{% url 'soil_update' soil.id %}">Edit</a>
 </div>
-<div>
-    {% if user == user.username %}
-    <a href = "{% url 'soil_update' soil.pk %}">Update</a>
-    <a href = "{% url 'soil_delete' soil.pk %}">Delete</a>
-    {% endif %}
-</div>
+
 {% endblock %}
