@@ -20,6 +20,9 @@
 .plantDetail{
     text-align: left;
 }
+.plantDetail h4{
+    text-decoration: underline;
+}
 /* .ul{
     list-style-type: none; 
     padding: 0; 
@@ -40,9 +43,6 @@ body{
     text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
-}
-h4{
-    text-decoration: underline;
 }
 img{
     display: block;
