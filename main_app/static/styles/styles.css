@@ -6,11 +6,11 @@
     border-radius: 5px;
 }
 
-.plantLink{
+.detailLink{
     text-decoration: none;
     color: black;
 }
-.plantLink:hover{
+.detailLink:hover{
     color: rgb(93, 137, 65);
 }
 .signOut{

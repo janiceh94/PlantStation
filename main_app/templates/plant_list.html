@@ -16,7 +16,7 @@
    <h1>{{header}}</h1>
    {% for plant in plants %}
         <img src={{plant.img.url}}/>
-        <a class='plantLink' href ="{% url 'plant_detail' plant.pk %}">Name: {{ plant.name }}</a>
+        <a class='detailLink' href ="{% url 'plant_detail' plant.pk %}">Name: {{ plant.name }}</a>
         <p>Planted By:
             <a href = '/user/{{plant.user.username}}/'>
                 {{plant.user.username }}
