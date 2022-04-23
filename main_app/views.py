@@ -77,18 +77,18 @@ class Soil_Create(LoginRequiredMixin, CreateView):
     model = Soil
     fields = '__all__'
     template_name = "soil_create.html"
-    success_url = '/soils/'
+    success_url = '/soil/'
 
 class Soil_Update(LoginRequiredMixin, UpdateView):
     model = Soil
     fields = '__all__'
     template_name = "soil_update.html"
-    success_url = '/soils/'
+    success_url = '/soil/'
 
 class Soil_Delete(LoginRequiredMixin, DeleteView):
     model = Soil
     template_name = 'soil_delete.html'
-    success_url = '/soils/'
+    success_url = '/soil/'
 
 # auth
 def signup_view(request):
