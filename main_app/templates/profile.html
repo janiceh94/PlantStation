@@ -3,7 +3,9 @@
 
 <h1>{{username}}'s collection:</h1>
 
-<a href = "{% url 'plant_create' %}">Add Plant</a>
+{% if username  == user.username %} 
+    <a href = "{% url 'plant_create' %}">Add Plant</a>
+{% endif %}
 {% for plant in plants %}
 <a href = "/plants/{{plant.id}}/">
     <h3>{{plant.name}}</h3>
