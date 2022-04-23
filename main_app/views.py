@@ -62,7 +62,8 @@ class Plant_Delete(LoginRequiredMixin, DeleteView):
 def profile(request, username):
     user = User.objects.get(username=username)
     plants = Plant.objects.filter(user=user)
-    return render(request, 'profile.html', {'username':username, 'plants': plants})
+    soils = Soil.objects.filter(user=user)
+    return render(request, 'profile.html', {'username':username, 'plants': plants, 'soils': soils})
     
 # soil CRUD
 def Soil_List(request):

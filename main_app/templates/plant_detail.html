@@ -2,15 +2,15 @@
 
 {% block body %}
 
-<img style = "width: 55%" src={{plant.img.url}}/>
 <h2>{{ plant.name }}</h2>
+<img style = "width: 55%" src={{plant.img.url}}/>
 <div class='plantDetail'>
     <h4>Water</h4>
-    <h5> {{ plant.water }}</h5>
+    <p> {{ plant.water }}</p>
     <h4>Light</h4>
-    <h5>{{ plant.light }}</h5>
+    <p>{{ plant.light }}</p>
     <h4>Temperature</h4>
-    <h5>{{ plant.temperature }}</h5>
+    <p>{{ plant.temperature }}</p>
     <h4>Soil</h4>
     <ul class = 'ul'>
         {% for soil in plant.soils.all %}
@@ -19,12 +19,6 @@
             <div>No Soil</div>
         {% endfor %}
     </ul>
-</div>
-<div>
-    {% if user == user.username %}
-    <a href = "{% url 'plant_update' plant.pk %}">Update</a>
-    <a href = "{% url 'plant_delete' plant.pk %}">Delete</a>
-    {% endif %}
 </div>
 
 {% endblock %}
