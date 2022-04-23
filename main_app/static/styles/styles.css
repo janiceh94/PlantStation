@@ -6,11 +6,11 @@
     border-radius: 5px;
 }
 
-.plantLink{
+.detailLink{
     text-decoration: none;
     color: black;
 }
-.plantLink:hover{
+.detailLink:hover{
     color: rgb(93, 137, 65);
 }
 .signOut{
@@ -19,6 +19,9 @@
 }
 .plantDetail{
     text-align: left;
+}
+.plantDetail h4{
+    text-decoration: underline;
 }
 /* .ul{
     list-style-type: none; 
@@ -40,9 +43,6 @@ body{
     text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
-}
-h4{
-    text-decoration: underline;
 }
 img{
     display: block;

@@ -5,6 +5,7 @@
 
 {% if username  == user.username %} 
     <a href = "{% url 'plant_create' %}">Add Plant</a>
+    <a href = "{% url 'soil_create' %}">Add Soil</a>
 {% endif %}
 {% for plant in plants %}
 <a href = "/plants/{{plant.id}}/">
