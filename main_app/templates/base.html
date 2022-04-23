@@ -13,22 +13,19 @@
        {% endblock %}
    </title>
 </head>
+<header>
+    <a class='signOut' href="/accounts/logout/">Sign Out</a>
+    {% block header %}
+    {% endblock %}
+</header>
 <body>
-    <nav>
-        {% if user.is_authenticated %}
-            <a href="/user/{{user.username}}/">Hello, {{user.username}}!</a>
-            <a href="/accounts/logout/">Logout</a>
-        {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'signup' %}">SignUp</a>
-        {% endif %}
-        <a href = '/plants/'>Plants</a>
-        <a href = '/plants/new/'>Add Plants</a>
-        <a href = '/soil/'>Soils</a>
-        <a href = '/user/{{user.username}}/'>Profile</a>
-        <a href = '/admin/'>Admin</a>
-    </nav>
-   {% block body %}
-   {% endblock %}
+    {% block body %}
+    {% endblock %}
 </body>
+<footer>
+    <a class='footer' href = '/plants/'>Plants</a>
+    <a class='footer' href = '/soil/'>Soils</a>
+    <a class='footer' href = '/user/{{user.username}}/'>Profile</a>
+    <a class='footer' href = '/admin/'>Admin</a>
+</footer>
 </html>
