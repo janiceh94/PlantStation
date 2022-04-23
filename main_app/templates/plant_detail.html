@@ -2,24 +2,29 @@
 
 {% block body %}
 
-<h1>{{ plant.name }}</h1>
-<div>
-    <img style = "width: 50px; height: 50px" src={{plant.img.url}}/>
+<img style = "width: 55%" src={{plant.img.url}}/>
+<h2>{{ plant.name }}</h2>
+<div class='plantDetail'>
+    <h4>Water</h4>
+    <h5> {{ plant.water }}</h5>
+    <h4>Light</h4>
+    <h5>{{ plant.light }}</h5>
+    <h4>Temperature</h4>
+    <h5>{{ plant.temperature }}</h5>
+    <h4>Soil</h4>
+    <ul class = 'ul'>
+        {% for soil in plant.soils.all %}
+            <li>{{soil.name}}</li>
+        {% empty %}
+            <div>No Soil</div>
+        {% endfor %}
+    </ul>
 </div>
-<h3>Water: {{ plant.water }}</h3>
-<h3>Light: {{ plant.light }}</h3>
-<h3>Temperature: {{ plant.temperature }}</h3>
-<h3>Soil:</h3>
-<ul>
-    {% for soil in plant.soils.all %}
-        <li>{{soil.name}}</li>
-    {% empty %}
-        <div>No Soil</div>
-    {% endfor %}
-</ul>
-
 <div>
+    {% if user == user.username %}
     <a href = "{% url 'plant_update' plant.pk %}">Update</a>
     <a href = "{% url 'plant_delete' plant.pk %}">Delete</a>
+    {% endif %}
 </div>
+
 {% endblock %}
