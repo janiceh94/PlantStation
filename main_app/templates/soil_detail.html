@@ -2,10 +2,10 @@
 
 {% block body %}
 
-<h1>{{ soil.name }}</h1>
+<h2>{{ soil.name }}</h2>
 <div>
-    <img style = "width: 50px; height: 50px" src={{soil.img.url}}/>
-    <h3>Plants:</h3>
+    <img style = "width: 25%" src={{soil.img.url}}/>
+    <h3>Can be used for:</h3>
     {% for plant in  soil.plant_set.all %}
         <p>{{plant.name}}</p>
     {% empty %}
@@ -13,7 +13,9 @@
     {% endfor %}
 </div>
 <div>
+    {% if user == user.username %}
     <a href = "{% url 'soil_update' soil.pk %}">Update</a>
     <a href = "{% url 'soil_delete' soil.pk %}">Delete</a>
+    {% endif %}
 </div>
 {% endblock %}
