@@ -14,7 +14,7 @@ urlpatterns = [
     # user
     path('user/<username>/', views.profile, name='profile'),
     #soil 
-    path('soil/', views.Soil_List, name='soil_list'),
+    path('soil/', views.Soil_List.as_view(), name='soil_list'),
     # soil CRUD
     path('soil/new/', views.Soil_Create.as_view(), name='soil_create'),
     path('soil/<int:soil_id>/', views.Soil_Detail, name='soil_detail'),

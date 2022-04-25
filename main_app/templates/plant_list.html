@@ -17,10 +17,5 @@
    {% for plant in plants %}
         <img src={{plant.img.url}}/>
         <a class='detailLink' href ="{% url 'plant_detail' plant.pk %}">Name: {{ plant.name }}</a>
-        <p>Planted By:
-            <a href = '/user/{{plant.user.username}}/'>
-                {{plant.user.username }}
-            </a>
-       </p>
    {% endfor %}
 {% endblock %}

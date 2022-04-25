@@ -8,7 +8,9 @@
 
 .detailLink{
     text-decoration: none;
+    text-transform: capitalize;
     color: black;
+
 }
 .detailLink:hover{
     color: rgb(93, 137, 65);

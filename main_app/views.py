@@ -66,9 +66,19 @@ def profile(request, username):
     return render(request, 'profile.html', {'username':username, 'plants': plants, 'soils': soils})
     
 # soil CRUD
-def Soil_List(request):
-    soils = Soil.objects.all()
-    return render(request, 'soil_list.html', {'soils': soils})
+class Soil_List(TemplateView):
+    template_name = 'soil_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get('name')
+        if name != None:
+            context['soils'] = Soil.objects.filter(name__icontains=name)
+            context['header'] = f'Searching for {name}'
+        else:
+            context['soils'] = Soil.objects.all()
+            context['header'] = 'All Soil'
+        return context
 
 def Soil_Detail(request, soil_id):
     soil = Soil.objects.get(id=soil_id)
