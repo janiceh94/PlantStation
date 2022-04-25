@@ -8,7 +8,9 @@
 
 .detailLink{
     text-decoration: none;
+    text-transform: capitalize;
     color: black;
+
 }
 .detailLink:hover{
     color: rgb(93, 137, 65);
@@ -16,6 +18,11 @@
 .signOut{
     float: right;
     padding: 0 30px 0 0;
+    text-decoration: none;
+    color: black;
+}
+.signOut:hover{
+    color: rgb(93, 137, 65);
 }
 .plantDetail{
     text-align: left;
@@ -26,13 +33,15 @@
 .profile a{
     text-decoration: none;
     color: black;
+    background-color:rgb(183, 212, 165);
 }
 .name:hover{
     color: rgb(93, 137, 65);
 }
-.post{
+.post a{
     background:rgb(183, 212, 165);
-    text-decoration: underline;
+    padding: 5px;
+    border-radius: 5px;
 }
 /* .ul{
     list-style-type: none; 
@@ -64,6 +73,7 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
     width: 30%;
 }
 footer{
