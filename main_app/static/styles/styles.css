@@ -23,6 +23,17 @@
 .plantDetail h4{
     text-decoration: underline;
 }
+.profile a{
+    text-decoration: none;
+    color: black;
+}
+.name:hover{
+    color: rgb(93, 137, 65);
+}
+.post{
+    background:rgb(183, 212, 165);
+    text-decoration: underline;
+}
 /* .ul{
     list-style-type: none; 
     padding: 0; 
