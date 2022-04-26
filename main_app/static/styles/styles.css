@@ -18,7 +18,9 @@
     background-position: center;
     background-size: cover;
     height: 100%;
-    width: 100%;
+}
+.backdrop{
+    backdrop-filter: blur(10px);
 }
 .detailLink{
     text-decoration: none;
@@ -139,4 +141,9 @@ footer{
 }
 .footer:hover{
     color: rgb(93, 137, 65);
+}
+@media (max-width: 480px){
+    .background{
+        background-image: url('https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80');
+    }
 }
