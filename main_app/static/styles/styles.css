@@ -35,13 +35,24 @@
     color: black;
     background-color:rgb(183, 212, 165);
 }
+.profile a:hover{
+    color: rgb(93, 137, 65);
+}
 .name:hover{
     color: rgb(93, 137, 65);
 }
 .post a{
     background:rgb(183, 212, 165);
-    padding: 5px;
-    border-radius: 5px;
+}
+.deletePost{
+    text-decoration: none;
+    color: black;
+}
+.deletePost:hover{
+    color: rgb(93, 137, 65);
+}
+.deleteConfirm:hover{
+    color: red;
 }
 /* .ul{
     list-style-type: none; 
@@ -54,13 +65,19 @@
 .plantPost{
     float: left;
     margin: 0 0 0 25%;
+    padding: 5px;
+    border-radius: 5px;
 }
 .soilPost{
     float: right;
     margin: 0 25% 0 0;
+    padding: 5px;
+    border-radius: 5px;
 }
 .editDelete a{
     margin: 0 25px 0 25px;
+    padding: 5px;
+    border-radius: 5px;
 }
 header{
     background-color:rgb(183, 212, 165);

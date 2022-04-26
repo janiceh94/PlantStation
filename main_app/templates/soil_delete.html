@@ -5,8 +5,8 @@
 <form method = 'post'>
     {% csrf_token %}
     <div>
-        <input type = 'submit' value = 'Confirm'/>
-        <a href = "{% url 'soil_detail' soil.pk %}">Cancel</a>
+        <input class = 'deleteConfirm' type = 'submit' value = 'Confirm'/>
+        <a class = 'deletePost' href = "{% url 'soil_detail' soil.pk %}">Cancel</a>
     </div>
 </form>
 
