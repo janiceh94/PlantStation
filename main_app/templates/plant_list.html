@@ -14,12 +14,12 @@
 {% endblock %}
 
 {% block body %}
+<div class = 'backdrop'></div>
    <h1>{{header}}</h1>
    {% for plant in plants %}
         <img src={{plant.img.url}}/>
         <!-- <img src = "{% static 'main_app/static/images/' %}"/> -->
-        <div class = 'backdrop'></div>
             <a class='detailLink' href ="{% url 'plant_detail' plant.pk %}">Name: {{ plant.name }}</a>
-        </div>
    {% endfor %}
+</div>
 {% endblock %}

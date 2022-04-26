@@ -6,21 +6,16 @@
     border-radius: 5px;
 }
 .landing{
-    background-image: url('https://img.freepik.com/free-vector/nature-background-with-golden-foil_52683-46949.jpg?w=2000');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('https://img.freepik.com/free-vector/nature-background-with-golden-foil_52683-46949.jpg?w=2000') no-repeat center center fixed;
     background-size: cover;
-    height: 100%;
 }
 .background{
-    background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Cute-Plant-Desktop-Background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('https://img.freepik.com/free-vector/watercolor-leaves-with-empty-space_23-2148867775.jpg?w=826') no-repeat center center fixed;
     background-size: cover;
-    height: 100%;
 }
-.backdrop{
+.backdrop a{ 
     backdrop-filter: blur(10px);
+    ba
 }
 .detailLink{
     text-decoration: none;
@@ -40,7 +35,8 @@
     color: rgb(93, 137, 65);
 }
 .plantDetail{
-    text-align: left;
+    text-align: center;
+    backdrop-filter: blur(5px);
 }
 .plantDetail h4{
     text-decoration: underline;
@@ -69,11 +65,11 @@
 .deleteConfirm:hover{
     color: red;
 }
-/* .ul{
+.ul{
     list-style-type: none; 
     padding: 0; 
     margin: 0;
-} */
+}
 .username h1{
     text-transform: capitalize;
 }
@@ -94,9 +90,9 @@
     padding: 5px;
     border-radius: 5px;
 }
-body, html{
+/* body, html{
     height: 100%;
-}
+} */
 header{
     background-color:rgb(183, 212, 165);
     position: fixed;
@@ -141,9 +137,4 @@ footer{
 }
 .footer:hover{
     color: rgb(93, 137, 65);
-}
-@media (max-width: 480px){
-    .background{
-        background-image: url('https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80');
-    }
 }
