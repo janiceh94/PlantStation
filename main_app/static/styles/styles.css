@@ -5,12 +5,25 @@
     padding:5px;
     border-radius: 5px;
 }
-
+.landing{
+    background-image: url('https://img.freepik.com/free-vector/nature-background-with-golden-foil_52683-46949.jpg?w=2000');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.background{
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Cute-Plant-Desktop-Background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
 .detailLink{
     text-decoration: none;
     text-transform: capitalize;
     color: black;
-
 }
 .detailLink:hover{
     color: rgb(93, 137, 65);
@@ -78,6 +91,9 @@
     margin: 0 25px 0 25px;
     padding: 5px;
     border-radius: 5px;
+}
+body, html{
+    height: 100%;
 }
 header{
     background-color:rgb(183, 212, 165);
