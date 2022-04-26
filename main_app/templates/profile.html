@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 {% block body %}
-
-<h1>{{username}}'s collection:</h1>
+<div class='username'>
+    <h1>{{username}}'s collection:</h1>
+</div>
 <div class = 'profile'>
     {% if username  == user.username %} 
-        <a href = "{% url 'plant_create' %}">Plant Post</a>
-        <a href = "{% url 'soil_create' %}">Soil Post</a>
+        <a class = 'plantPost' href = "{% url 'plant_create' %}">Plant Post</a>
+        <a class = 'soilPost' href = "{% url 'soil_create' %}">Soil Post</a>
     {% endif %}
     {% for plant in plants %}
         <img style = 'width: 20%' src={{plant.img.url}}/>
         <a href = "/plants/{{plant.id}}/">
-        <h4 class = 'name'>Name: {{plant.name}}</h4>
-        {% if username == user.username %}
-            <a href = "{% url 'plant_update' plant.pk %}">Edit</a>
-            <a href = "{% url 'plant_delete' plant.pk %}">Delete</a>
-        {% endif %}
+            <h4 class = 'name'>Name: {{plant.name}}</h4>
+        </a>
+        <div class = 'editDelete'>
+            {% if username == user.username %}
+                <a href = "{% url 'plant_update' plant.pk %}">Edit</a>
+                <a href = "{% url 'plant_delete' plant.pk %}">Delete</a>
+            {% endif %}
+        </div>
     </a>
     {% endfor %}
     {% for soil in soils %}
@@ -22,10 +26,12 @@
         <a href = "/soil/{{soil.id}}/">
         <h4 class = 'name'>Name: {{soil.name}}</h4>
         </a>
-    {% if username == user.username %}
-        <a href = "{% url 'soil_update' soil.pk %}">Edit</a>
-        <a href = "{% url 'soil_delete' soil.pk %}">Delete</a>
+        <div class = 'editDelete'>
+        {% if username == user.username %}
+            <a href = "{% url 'soil_update' soil.pk %}">Edit</a>
+            <a href = "{% url 'soil_delete' soil.pk %}">Delete</a>
         {% endif %}
+        </div>
     {% endfor %}
 </div>
 
