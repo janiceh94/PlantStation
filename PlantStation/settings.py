@@ -17,12 +17,12 @@ if not os.environ.get('PRODUCTION'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# STATICFILES_DIRS = BASE_DIR / 'static'
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [BASE_DIR / 'main_app/static']
+# STATIC_ROOT = [BASE_DIR, 'static/']
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 MEDIA_URL = ''
-# MEDIA_ROOT = BASE_DIR / 'images'
 MEDIA_ROOT = ''
+# MEDIA_ROOT = [BASE_DIR, 'static/']
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,7 +32,7 @@ MEDIA_ROOT = ''
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
