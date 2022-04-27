@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}
    Plant Page
 {% endblock %}
@@ -17,8 +16,7 @@
 <div class = 'backdrop'></div>
    <h1>{{header}}</h1>
    {% for plant in plants %}
-        <img src={{plant.img.url}}/>
-        <!-- <img src = "{% static 'main_app/static/images/' %}"/> -->
+        <img src = "{{plant.img}}"/>
             <a class='detailLink' href ="{% url 'plant_detail' plant.pk %}">Name: {{ plant.name }}</a>
    {% endfor %}
 </div>
