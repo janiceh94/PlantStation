@@ -4,7 +4,7 @@
 
 <h2>{{ soil.name }}</h2>
 <div>
-    <img style = "width: 25%" src={{soil.img.url}}/>
+    <img style = "width: 25%" src="{{soil.img}}"/>
     <h3>Can be used for:</h3>
     {% for plant in  soil.plant_set.all %}
         <p>{{plant.name}}</p>
