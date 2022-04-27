@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Soil(models.Model):
     name = models.CharField(max_length=250)
-    img = models.CharField(max_length=500)
+    img = models.CharField(max_length=1000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -11,7 +11,7 @@ class Soil(models.Model):
 
 class Plant(models.Model):
     name = models.CharField(max_length=250)
-    img = models.CharField(max_length=500)
+    img = models.CharField(max_length=1000)
     water = models.CharField(max_length=250)
     light = models.CharField(max_length=250)
     temperature = models.CharField(max_length=250)
