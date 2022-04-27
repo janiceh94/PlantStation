@@ -15,7 +15,6 @@
 }
 .backdrop a{ 
     backdrop-filter: blur(10px);
-    ba
 }
 .detailLink{
     text-decoration: none;
@@ -36,7 +35,9 @@
 }
 .plantDetail{
     text-align: center;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .plantDetail h4{
     text-decoration: underline;
@@ -90,9 +91,6 @@
     padding: 5px;
     border-radius: 5px;
 }
-/* body, html{
-    height: 100%;
-} */
 header{
     background-color:rgb(183, 212, 165);
     position: fixed;
