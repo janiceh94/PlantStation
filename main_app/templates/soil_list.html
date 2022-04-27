@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block body %}
-   <h1>All Soils</h1>
+   <h1>{{header}}</h1>
    {% for soil in soils %}
         <img src="{{soil.img}}"/>
         <a class = 'detailLink' href ="{% url 'soil_detail' soil.pk %}">Name: {{ soil.name }}</a>
