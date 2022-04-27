@@ -42,6 +42,9 @@
 .plantDetail h4{
     text-decoration: underline;
 }
+.detailImg img{
+    max-width: 45%;
+}
 .profile a{
     text-decoration: none;
     color: black;
@@ -135,4 +138,13 @@ footer{
 }
 .footer:hover{
     color: rgb(93, 137, 65);
+}
+@media only screen and (max-width:400px){
+    .detailImg img{
+        max-width:100%;
+    }
+    .plantDetail{
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

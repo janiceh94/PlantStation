@@ -18,15 +18,18 @@ if not os.environ.get('PRODUCTION'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "main_app/static"),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "main_app/static"),)
 # STATIC_ROOT = BASE_DIR / 'static'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static',)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static',)
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-MEDIA_URL = ''
-MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'images')
-
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+MEDIA_URL = '/static/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+# MEDIA_ROOT = BASE_DIR / 'images'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles/images'),
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -35,7 +38,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'images')
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -43,12 +46,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     'main_app',
 ]

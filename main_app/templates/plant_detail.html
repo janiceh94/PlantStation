@@ -3,7 +3,9 @@
 {% block body %}
 
 <h2>{{ plant.name }}</h2>
-<img style = "width: 55%" src={{plant.img.url}}/>
+<div class = 'detailImg'>
+    <img src={{plant.img.url}}/>
+</div>  
 <div class='plantDetail'>
     <h4>Water</h4>
     <p> {{ plant.water }}</p>

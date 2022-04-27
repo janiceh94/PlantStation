@@ -11,7 +11,7 @@ class Soil(models.Model):
 
 class Plant(models.Model):
     name = models.CharField(max_length=250)
-    img = models.ImageField(upload_to='images')
+    img = models.CharField(max_length=500)
     water = models.CharField(max_length=250)
     light = models.CharField(max_length=250)
     temperature = models.CharField(max_length=250)

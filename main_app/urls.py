@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, re_path
+
+from PlantStation.settings import DEBUG
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.static import serve
  
 urlpatterns = [
     path('', views.Landing.as_view(), name='landing'),
@@ -22,7 +25,10 @@ urlpatterns = [
     path('soil/<int:pk>/delete', views.Soil_Delete.as_view(), name='soil_delete'),
     # auth
     path('accounts/signup/', views.signup_view, name="signup"),
+
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
 
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
